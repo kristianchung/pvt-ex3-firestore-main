@@ -3,12 +3,12 @@ import Produit from "./Produit";
 import { useEffect, useState } from 'react';
 /******* Ex#3 - Étape D ********************************/ 
 // Importer l'objet bd du fichier firebase.js
-
+import bd from '../data/firebase';
 
 export default function ListeProduits(props) {
   /******* Ex#3 - Étape E ********************************/ 
   // Créer un "état" React pour les produits (utiliser useState)
-  
+  let [produits, setProduits]= useState([]);
     
   useEffect(() => {
     async function getProduits() {
@@ -21,9 +21,7 @@ export default function ListeProduits(props) {
       // est une Promesse, vous pouvez simplement utiliser la syntax 'await' pour attendre le résultat avant de remplir le tableau tabProduits 
       // (visionnez la capsule au sujet du code asynchrone en JavaScript)]
       const reponse = await bd.collection('ex3-produits').get();
-      reponse.forEach(
-        prd => tabProduits.push(prd.data())
-      );
+      reponse.forEach(prd => tabProduits.push(prd.data()));
       
       /******* Ex#3 - Étape G ********************************/ 
       // Modifier l'état des produits (initialisé ci-dessus avec useState) en utilisant le mutateur et le tableau tabProduits
