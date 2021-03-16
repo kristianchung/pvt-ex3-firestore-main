@@ -20,9 +20,8 @@ export default function ListeProduits(props) {
       // [Suggestion : remarquez que la fonction getProduits() est marquée 'async'. Lorsque vous appelez la méthode Firestore qui retourne les produits, cette fonction 
       // est une Promesse, vous pouvez simplement utiliser la syntax 'await' pour attendre le résultat avant de remplir le tableau tabProduits 
       // (visionnez la capsule au sujet du code asynchrone en JavaScript)]
-      const reponse= await bd.collection('ex3-produits').get();
+      const reponse = await bd.collection('ex3-produits').get();
       reponse.forEach(doc=> tabProduits.push({id: doc.id, ...doc.data()}));
-
       
       /******* Ex#3 - Étape G ********************************/ 
       // Modifier l'état des produits (initialisé ci-dessus avec useState) en utilisant le mutateur et le tableau tabProduits
@@ -46,10 +45,10 @@ export default function ListeProduits(props) {
           produits.map((prd) => (
             <Produit
               key={prd.id}
-              etatPanier={props.etatPanier}
               id={prd.id}
               nom={prd.nom}
               prix={prd.prix}
+              etatPanier={props.etatPanier}
             />
           ))
         }
