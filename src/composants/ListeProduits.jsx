@@ -41,11 +41,17 @@ export default function ListeProduits(props) {
           Attention : les composants Produit s'attendent à recevoir l'état du panier dans leurs props, donc vous devez
           avoir l'attribut "etatPanier={props.etatPanier}" quand vous les générer ici : encore une fois, regardez 
           le code de l'exercice de classe.
-        */}
-        {
-          produits.map( 
-            produit =>  <li key={produit.id}><Produit id={produit.id} nom={produit.nom} prix={produit.prix} etatPanier={props.etatPanier} /></li>
-        )}
+        */
+          produits.map((prd) => (
+            <Produit
+              key={prd.id}
+              etatPanier={props.etatPanier}
+              id={prd.id}
+              nom={prd.nom}
+              prix={prd.prix}
+            />
+          ))
+        }
       </ul>
     </div>
   );
