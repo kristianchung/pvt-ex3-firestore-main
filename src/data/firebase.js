@@ -9,8 +9,8 @@ const firebaseConfig = {
   projectId: "ex3-produits",
   storageBucket: "ex3-produits.appspot.com",
   messagingSenderId: "107490036196",
-  appId: "1:107490036196:web:a61fc6cb3048467c395ff1",
-  measurementId: "G-JS96L8B7G3"
+  appId: "1:107490036196:web:b146ec0c161fcd4a395ff1",
+  measurementId: "G-9SF2XZME1R"
 };
 
 // Initialiser Firebase
